@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="./css/dangky.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div class="row mb header">
+        <h1> SIÊU THỊ TRỰC TUYẾN</h1>
+    </div>
+
+    <div class="row mb menu">
+        <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="giohang.html">Giỏ hàng</a></li>
+            <li><a href="dangky.html">Đăng ký</a></li>
+            <li><a href="#">Liên hệ</a></li>
+            <li><a href="#">Góp ý</a></li>
+            <li><a href="#">Hỏi đáp</a></li>
+        </ul>
+    </div>
+    <div class="container" >
+        <h2>ĐẶT HÀNG</h2>
+        <form name="frm">
+            <p class="form-group">
+                <label>Họ và tên</label>
+                <input class="form-control" type="text" name="hvt" required ng-model="hvt"/><br>
+                <em ng-if="frm.hvt.$invalid">Họ tên không được bỏ trống</em>
+            </p>
+            <p class="form-group">
+                <label>Số điện thoại</label>
+                <input class="form-control" type="text" name="sdt" required ng-model="sdt"/><br>
+                <em ng-if="frm.sdt.$invalid">Số điện thoại không được bỏ trống</em>
+            </p>
+            <p class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="text" name="mail" required ng-model="mail"/><br>
+                <!-- <em ng-if="frm.mail.$invalid">Email không được bổ trống</em> -->
+            </p>
+            <p class="form-group">
+                <label>Giới Tính</label>
+                <fieldset>
+                    <input class="form-control" type="radio" name="nam" />Nam
+                    <input class="form-control" type="radio" name="nu" />Nữ
+                </fieldset>
+                <em ng-if="!nam && nu==0">Vui lòng chọn giới tính của mình</em>
+            </p>
+            
+            <p class="form-group">
+                <label>Quốc tịch </label>
+                <input list="quoctich" class="form-control" required ng-model="quoctich"/>
+                <datalist id="quoctich">
+                    <option>Việt Nam</option>
+                    <option>Thái Lan</option>
+                    <option>America</option>
+                    <option>Nhật Bản</option>
+                    <option>Singapo</option>
+                    <option>Hàn Quốc</option>
+                </datalist>
+                <em ng-if="">Vui lòng chọn quốc tịch của mình</em>
+            </p>
+            <p class="form-group">
+                <label>Ghi Chú </label>
+                <textarea rows="3" cols="30" class="form-control"></textarea>
+            </p>
+            <hr />
+            <p class="form-group">
+                <div class="form-group">
+                    <button class="button" type="submit">Đặt hàng</button>
+                </div>
+            </p>
+        </form>
+</body>
+</html>
+<script>
+    var app = angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope){
+        //xuly
+    });
+</script>
